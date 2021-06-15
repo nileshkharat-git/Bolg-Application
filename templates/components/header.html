@@ -1,0 +1,67 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+  </style>
+  {% if title %}
+  <title>WorldBlog.com | {{title}}</title>
+  {% else %}
+  <title>WorldBlog.com</title>
+  {% endif%}
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">WorldBlog.com</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse font-weight-bold"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashBoard'%}">My Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item" data-toggle="modal" data-target="#loginModal">
+        <a class="nav-link" href="#">Login</a>
+      </li>
+      <li class="nav-item" data-toggle="modal" data-target="#signUpModal">
+        <a class="nav-link text-success">Join Now</a>
+      </li>
+      {% endif %}
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="{% url 'searchBlog'%}">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="query"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
