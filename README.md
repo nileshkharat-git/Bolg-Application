@@ -1,5 +1,5 @@
 # Bolg-Application
-<h3>Basic Blog application develop using dajgno framework.</h3>
+<h3>Basic Blog application developed using dajgno framework.</h3>
 
 #1 Home page
 ![home page](https://github.com/nileshkharat-git/Bolg-Application/blob/main/static/images/home_page.png)
