@@ -1,4 +1,4 @@
-# Bolg-Application
+# Blog-Application
 <h3>Basic Blog application developed using dajgno framework.</h3>
 
 #1 Home page
