@@ -8,6 +8,7 @@ urlpatterns = [
     path('',views.home, name='home'),
     path('users/', include('accounts.urls')),
     path('blogs/',include('blogs.urls')),
+    path('api/', include('api.urls'))
 
 ]
 

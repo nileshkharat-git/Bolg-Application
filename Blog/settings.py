@@ -26,7 +26,7 @@ SECRET_KEY = ')!ip)(yb&f479k-zpj6!*mol(%##6hwt#6ak(8-q15ws*5d7ac'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOWED_ALL_ORIGIN = True
 
 # Application definition
 
@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
 #     user defined apps
     'accounts',
     'blogs',
+    'api'
 ]
 
 MIDDLEWARE = [
